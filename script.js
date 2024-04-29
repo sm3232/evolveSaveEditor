@@ -153,6 +153,8 @@ const expand = (scope, data) => {
 }
 input.addEventListener("input", () => {
     root.innerHTML = "";
+    keys = [];
+    values = [];
     try {
         data = JSON.parse(LZString.decompressFromBase64(input.value));
         let map = traverse(data);
