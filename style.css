@@ -15,6 +15,8 @@ html{background-color: var(--bg-default)}
 body{padding: 0px;margin: 0px}
 p,h2{font-size: 1em}
 h1{font-size: 1.5em}
+hr{width: 200px;}
+
 
 
 #container {
@@ -63,15 +65,18 @@ h1{font-size: 1.5em}
 #options {
     position: sticky;
     width: 90%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     top: 96px;
     display: flex;
-    flex-flow: row-reverse;
+    flex-flow: column wrap-reverse;
+    height: 671px;
+    gap: 15px;
 }
-#options > * {
+#options > div {
     display: flex;
     flex-flow: column wrap;
     align-items: end;
+    width: fit-content;
 }
 #options > * > p, #options > * > h1 {
     width: max-content;
@@ -119,4 +124,21 @@ button {
 button:hover {
     background-color: var(--fg-default);
     color: var(--bg-default);
+}
+.quick-search > input {
+    width: min-content;
+}
+#search-results {
+    display: flex;
+    flex-flow: column nowrap !important;
+    overflow: scroll;
+    flex-basis: 341px;
+    min-width: 100%;
+    max-width: 220px;
+}
+.max-button {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
 }
