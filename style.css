@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&display=swap');
+:root {
+    --bg-default: #2c2c2c;
+    --fg-default: #8090c0;
+    --bg-1lighter: #444444;
+    --font: "Noto Sans Mono", monospace;
+}
+* {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--fg-default);
+}
+html{background-color: var(--bg-default)}
+body{padding: 0px;margin: 0px}
+p,h2{font-size: 1em}
+h1{font-size: 1.5em}
+
+
+#container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+#root {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-flow: column nowrap;
+}
+#header {
+    margin: 0 auto;
+    width: 75%;
+    height: auto;
+    padding: 15px;
+    position: sticky;
+    z-index: 1;
+    top: 0; left: 0;
+}
+#save-in-out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#save-in-out > div {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#options-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#options {
+    position: sticky;
+    width: 90%;
+    justify-content: space-evenly;
+    top: 96px;
+    display: flex;
+    flex-flow: row-reverse;
+}
+#options > * {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: end;
+}
+#options > * > p, #options > * > h1 {
+    width: max-content;
+    margin: 0px;
+    text-align: end;
+    cursor: pointer;
+}
+#jumps > p {
+    cursor: pointer;
+}
+.text-field {
+    width: 20em;
+    padding: 10px;
+    background-color: var(--bg-1lighter);
+    color: var(--fg-default);
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    outline: none;
+}
+.dynamic {
+    padding: 5px 15px 5px 15px;
+    line-height: 3em;
+}
+.text-field:hover, .text-field:focus {
+    outline: none;
+    border: 1px solid var(--fg-default);
+    border-radius: 10px;
+}
+.text-field::selection {
+    color: var(--bg-1lighter);
+    background-color: var(--fg-default);
+}
+button {
+    background-color: var(--bg-1lighter);
+    outline: 1px solid transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    color: var(--fg-default);
+    transition: all 0.2s;
+    cursor: pointer;
+    min-width: max-content;
+}
+button:hover {
+    background-color: var(--fg-default);
+    color: var(--bg-default);
+}
